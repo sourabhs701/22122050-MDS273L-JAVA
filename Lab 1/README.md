@@ -13,5 +13,5 @@ Identify if the employee belongs to the top MNC Companies (Facebook, Google, Mic
 
 # Preview
 
-<img title="a title" alt="Alt text" src="/Users/sourabhsoni/Desktop/Christ/ME/22122050-MDS273L-JAVA/Lab 1/Preview.png">
+<img title="a title" alt="Alt text" src="Preview.png">
 
