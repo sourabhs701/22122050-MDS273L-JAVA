@@ -1,8 +1,11 @@
 import java.io.*;
 
 class Lab1{
+  public static final String ANSI_RESET = "\u001B[0m";
+  public static final String ANSI_RED = "\u001B[31m";
+  public static final String ANSI_GREEN = "\u001B[32m";
 
-    public static String  checkRegion(String state) {
+    public static String checkRegion(String state) {
         /*
          * India, with the help of a switch statement, 
          * it should display "The Employee is from the southern states of India; 
@@ -10,34 +13,34 @@ class Lab1{
          */
         
         switch (state) {
-          case "Andhra Pradesh":
-          case "Telangana":
-          case "Tamil Nadu":
-          case "Kerala":
+          case "andhra Pradesh":
+          case "telangana":
+          case "tamil Nadu":
+          case "kerala":
             return("South India");
 
-          case "Maharashtra":
-          case "Goa":
-          case "Gujarat":
+          case "maharashtra":
+          case "goa":
+          case "gujarat":
             return("West India");
 
-          case "Madhya Pradesh":
-          case "Chhattisgarh":
-          case "Uttar Pradesh":
-          case "Uttarakhand":
+          case "madhya Pradesh":
+          case "chhattisgarh":
+          case "uttar Pradesh":
+          case "uttarakhand":
             return("Central India");
 
-          case "Bihar":
-          case "Odisha":
-          case "Jharkhand":
+          case "bihar":
+          case "odisha":
+          case "jharkhand":
             return("East India");
 
-          case "Delhi":
-          case "Haryana":
-          case "Punjab":
-          case "Himachal Pradesh":
-          case "Jammu and Kashmir":
-          case "Rajasthan":
+          case "delhi":
+          case "haryana":
+          case "punjab":
+          case "himachal Pradesh":
+          case "jammu and Kashmir":
+          case "rajasthan":
             return("North India");
 
           default:
@@ -51,7 +54,7 @@ class Lab1{
          * (Facebook, Google, Microsoft, Samsung, IBM, Apple); if so, 
          * print a message "The employee is working in Top MNC Companies".
          */
-        String[] topMNCs = {"Facebook", "Google", "Microsoft", "Samsung", "IBM", "Apple"};
+        String[] topMNCs = {"facebook", "google", "microsoft", "samsung", "ibm", "apple"};
         boolean isTopMNC = false;
   
         for (String mnc : topMNCs) {
@@ -85,6 +88,15 @@ class Lab1{
             String empGender = input[3];
             String empComp = input[4];
 
+            /*
+             * Camel Case
+             */
+            empState = empState.toLowerCase();
+            empGender = empGender.toLowerCase();
+            empComp = empComp.toLowerCase();
+             
+
+
             String empRegion = checkRegion(empState);
 
             
@@ -98,11 +110,13 @@ class Lab1{
             }else{
                 empGender = "FEMALE";
             }
-
-            System.out.println("Name: " + empName + "\nAge: "+empAge);
-            System.out.println("The Employee is from the "+empRegion+ " Preferable work location is in "+ empState);
-            System.out.println("\n Gender: " + empGender);
+            System.out.println("************************************************");
+            System.out.println(ANSI_RED + "Name: " + ANSI_GREEN + empName +ANSI_RED+ "\nAge: "+ANSI_GREEN +empAge);
+            System.out.println(ANSI_RED +"The Employee is from the "+ANSI_GREEN +empRegion+ ANSI_RED+ " Preferable work location is in " +ANSI_GREEN + empState);
+            System.out.println(ANSI_RED +"Gender: " + ANSI_GREEN + empGender);
             checkMNC(empComp);
+            System.out.println(ANSI_RESET + "************************************************");
+
             }        
 
     }
